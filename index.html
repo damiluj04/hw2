@@ -4,7 +4,7 @@
 	Program:        Homework 2
 	Author:         Damian Lujan
 	Date Created:   3-4-2026
-	Date Modified:  3-4-2026
+	Date Modified:  3-10-2026
 -->
 
 <html>
@@ -54,9 +54,14 @@
 						id="fname"
 						maxlength="30"
 						required
-						title="Enter first name"
+						title="Letters, apostrophes, and dashes only"
+						pattern="[a-zA-Z']{1,30}"
+						onblur="validateFname()"
 						placeholder="First Name"
 						/>
+
+					</br>
+					<span class="error" id="fname_error"></span>	
 					</td>
 				</tr>
 
@@ -71,9 +76,14 @@
 						id="mini"
 						maxlength="1"
 						required
-						title="Enter middle initial"
+						title="Letters only"
+						pattern="[a-zA-Z']{0,1}"
+						onblur="validateMini()"
 						placeholder="Middle Initial"
 						/>
+					
+					</br>
+					<span class="error" id="mini_error"></span>
 					</td>
 				</tr>
 
@@ -88,9 +98,13 @@
 						id="lname"
 						maxlength="30"
 						required
-						title="Enter last name"
+						title="Letters, apostrophes, and dashes only"
+						pattern="[a-zA-Z']{1,30}"
+						onblur="validateLname()"
 						placeholder="Last Name"
 						/>
+					</br>
+					<span class="error" id="lname_error"></span>
 					</td>
 				</tr>
 
@@ -134,7 +148,12 @@
 						type="date"
 						name="dob"
 						id="dob"
+						onblur="validateDob()"
+						required
 						/>
+
+					</br>
+					<span class="error" id="dob_error"></span>
 					</td>
 				</tr>
 
@@ -150,9 +169,13 @@
 						name="ssn"
 						id="ssn"
 						required
-						title="Enter SSN"
+						title="Numbers only"
 						placeholder="123-45-6789"
+						onblur="validateSSN()"
 						/>
+					
+					</br>
+					<span class="error" id="ssn_error"></span>
 					</td>
 				</tr>	
 					
@@ -177,7 +200,11 @@
 						required
 						title="Enter address line"
 						placeholder="4200 Martin Luther King Blvd"
+						onblur="validateAddress1()"
 						/>
+
+					</br>
+					<span class="error" id="address1_error"></span>
 					</td>
 				</tr>
 
@@ -284,8 +311,13 @@
 						minlength="5"
 						maxlength="10"
 						required
-						title="Enter zip code"
+						title="Numbers only"
 						placeholder="77204"
+						pattern="[0-9]{5}"
+						/>
+
+					</br>
+					<span class="error" id="zcode_error"></span>
 					/td>
 				</tr>
 
@@ -301,7 +333,12 @@
 						required
 						title="Enter email address"
 						placeholder="user@example.com"
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+						onblur="validateEmail()"
 						/>
+					
+					</br>
+					<span class="error" id="email_error"></span>
 					</td>
 				</tr>
 
@@ -319,7 +356,11 @@
 						required
 						title="Enter phone number"
 						placeholder="(123) 456-7890"
+						onblur="validatePhone()"
 						/>
+
+					</br>
+					<span class="error" id="Phone_error"></span>	
 					</td>
 				</tr>
 
@@ -482,11 +523,16 @@
 						name="uname"
 						id="uname"
 						pattern="[A-Za-z]+[A-Za-z0-9]{8,}"
+						minlength="5"
 						maxlength="20"
 						required
-						title="Enter a username"
+						title="Username must contain at least 5 characters and cannot start with a number."
 						placeholder="odlujan"
+						onblur="validateUname()"
 						/>
+
+					</br>
+					<span class="error" id="uname_error"></span>	
 					</td>
 				</tr>
 
@@ -503,9 +549,15 @@
 						minlength="10"
 						maxlength="30"
 						required
-						title="Enter a password"
+						title="Passwords must be at least 8 characters and no more than 30 characters long and contain at least 1 upper case latter, 1 number and 1 "special" character."
 						placeholder="Required"
+						onblur="validatePword()"
+						oninput="validatePword()"
+						onfocus="validatePword()"
 						/>
+
+					</br>
+					<span class="error" id="pword_error"></span>	
 					</td>
 				</tr>
 
@@ -524,7 +576,13 @@
 						required
 						title="Confirm password"
 						placeholder="Required"
+						onblur="validateConPword()"
+						oninput="validateConPword()"
+						onfocus="validateConPword()"
 						/>
+
+					</br>
+					<span class="error" id="conpword_error"></span>
 					</td>
 				</tr>
 
@@ -534,6 +592,7 @@
 							<input 
 							type="submit" 
 							name="submit" 
+							id="submit"
 							style="font-family: tahoma, sans-serif;"
 							/>
 							
@@ -541,7 +600,16 @@
 							
 							<input 
 							type="reset" 
-							name="reset" 
+							name="reset"
+							id="reset" 
+							style="font-family: tahoma, sans-serif;"
+							/>
+
+							<input 
+							type="button" 
+							name="review" 
+							id="review"
+							value="review"
 							style="font-family: tahoma, sans-serif;"
 							/>
 						</div>
@@ -554,6 +622,6 @@
 <footer>
 	<p id="footer">2026 Auroraville Clinic | <a href="https://www.youtube.com/watch?v=1mOGviDFRQU&list=RD1mOGviDFRQU&start_radio=1&pp=ygUXbWl0c2tpIHdoZXJlJ3MgbXkgcGhvbmWgBwE%3D" target="_blank" rel="noopener noreferrer">Contact Us!</a></p>
 </footer>
-<script src="hw1.js"></script>
+<script src="hw2.js"></script>
 	</body>
 </html>
