@@ -105,3 +105,50 @@ p
         font-family:'Trebuchet MS', sans-serif;
         font-weight: normal;
     }
+
+.error
+    {
+        color: red;
+        font-size: 12px;
+        font-family:'Trebuchet MS', sans-serif;
+        font-weight: normal;
+    }
+
+.password_message
+    {
+        text-align: right;
+        font-family:'Trebuchet MS', sans-serif;
+        font-weight: normal;
+        position: relative;
+        left: 100px;
+        background: transparent;
+        padding: 10px;
+        border-spacing: 2px;
+        border-radius: 20px;
+        color: red;
+    }
+
+#review
+    {
+        margin-top: 5px;
+    }
+
+table.output,
+tr.output,
+td.output
+    {
+       width: 500px;
+       background-color: rgba(209, 171, 243, 0.753); 
+       padding: 10px;
+       border-spacing: 2px;
+       border-radius: 20px;
+       color: black;
+    }
+
+td.output
+    {
+        width: 500px
+        background-color: rgba(209, 171, 243, 0.753);
+        padding: 10px;
+        border-spacing: 2px;
+    }
