@@ -4,7 +4,7 @@
 	Program:        Homework 2
 	Author:         Damian Lujan
 	Date Created:   3-4-2026
-	Date Modified:  3-10-2026
+	Date Modified:  3-12-2026
 -->
 
 <html>
@@ -35,7 +35,7 @@
 			</table>
 		</header>
 <hr>
-<form action="thankyou.html">
+<form action="signup" id="signup" action="thankyou.html">
 	<center>
 		<div class="format">
 			<table>
@@ -313,7 +313,7 @@
 						required
 						title="Numbers only"
 						placeholder="77204"
-						pattern="[0-9]{5}"
+						onblur="validateZcode()"
 						/>
 
 					</br>
@@ -538,22 +538,22 @@
 
 				<tr>
 					<td class="td1">
-						<label for="pword">Password:</label>
+						<label for="password">Password:</label>
 					</td>
 					<td>
 						<input
 						type="password"
-						name="pword"
-						id="pword"
+						name="password"
+						id="password"
 						pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 						minlength="10"
 						maxlength="30"
 						required
 						title="Passwords must be at least 8 characters and no more than 30 characters long and contain at least 1 upper case latter, 1 number and 1 "special" character."
 						placeholder="Required"
-						onblur="validatePword()"
-						oninput="validatePword()"
-						onfocus="validatePword()"
+						onblur="validatePassword()"
+						oninput="validatePassword()"
+						onfocus="validatePassword()"
 						/>
 
 					</br>
@@ -568,21 +568,21 @@
 					<td>
 						<input
 						type="password"
-						name="con_pword"
-						id="con_pword"
+						name="con_password"
+						id="con_password"
 						pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 						minlength="10"
 						maxlength="30"
 						required
 						title="Confirm password"
 						placeholder="Required"
-						onblur="validateConPword()"
-						oninput="validateConPword()"
-						onfocus="validateConPword()"
+						onblur="validateConPassword()"
+						oninput="validateConPassword()"
+						onfocus="validateConPassword()"
 						/>
 
 					</br>
-					<span class="error" id="conpword_error"></span>
+					<span class="error" id="password2_error"></span>
 					</td>
 				</tr>
 
@@ -609,14 +609,29 @@
 							type="button" 
 							name="review" 
 							id="review"
-							value="review"
+							value="Review"
 							style="font-family: tahoma, sans-serif;"
+							onclick="reviewInput()"
 							/>
 						</div>
 					</td>
 				</tr>
 			</table>
 		</div>
+	<div class="password_message">
+		<span id="msg1"></span><br/>
+		<span id="msg2"></span><br/>
+		<span id="msg3"></span><br/>
+		<span id="msg4"></span><br/>
+		<span id="msg5"></span><br/>
+		<span id="msg6"></span><br/>
+		<span id="msg7"></span><br/>
+		<span id="password2_error"></span><br/>
+	</div>
+		<center>
+			<p id="showInput"></p>
+		</center>
+	</div>	
 	</center>
 </form>
 <footer>
