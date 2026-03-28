@@ -53,25 +53,6 @@ function validateSSN()
     }
 }
 
-function validateAddress1()
-{
-    var ad1 = document.getElementById("address1").value;
-    console.log(ad1);
-    console.log(ad1.length);
-
-    if (ad1.length < 2)
-    {
-        document.getElementById("address1_error").innerHTML = "Please enter valid address";
-        return false;
-    }
-        
-    else
-    {
-        document.getElementById("address1_error").innerHTML = "";
-        return true;
-    }
-}
-
 function validateZcode()
 {
    const zipInput = document.getElementById("zcode");
