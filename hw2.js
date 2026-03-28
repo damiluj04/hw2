@@ -159,13 +159,13 @@ function validateUname()
         return false;
     }
 
-    elseif (uname.length < 5)
+    else if (uname.length < 5)
     {
         document.getElementById("uname_error").innerHTML = "Username cannot be shorter than 5 characters";
         return false;
     }
 
-    elseif (uname.length > 20)
+    else if (uname.length > 20)
     {
         document.getElementById("uname_error").innerHTML = "Username cannot be longer than 20 characters";
         return false;
@@ -241,7 +241,7 @@ function reviewInput()
     var i;
     formoutput = 
     "<table class='output'><th colspan = '3'>Your Information:</th>";
-    for (i = 0; 'i < formcontent.length; i++)')
+    for (i = 0; i < formcontent.length; i++)
     {    
         if (formcontent.elements[i].value !== "")
         {
@@ -259,8 +259,8 @@ function reviewInput()
                 case "radio":
                     if (formcontent.elements[i].checked)
                     {
-                        formoutput = formoutput + "<tr> <td align = 'right'" + formcontent.elements[i].name + "</td>"";
-                        formoutput = "<td class = 'outputdata'>" + formcontent.elements[i].value + "</td></tr>";
+                        formoutput = formoutput + "<tr> <td align = 'right'>" + formcontent.elements[i].name + "</td>";
+                        formoutput = formoutput + "<td class = 'outputdata'>" + formcontent.elements[i].value + "</td></tr>";
                     }
                     break;
 
